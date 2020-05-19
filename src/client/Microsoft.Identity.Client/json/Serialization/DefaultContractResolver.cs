@@ -52,6 +52,9 @@ using System.Linq;
 
 #endif
 using Microsoft.Identity.Json.Serialization;
+#if UNO_WASM
+using MemberTypes = Microsoft.Identity.Json.Utilities.MemberTypes;
+#endif
 
 namespace Microsoft.Identity.Json.Serialization
 {

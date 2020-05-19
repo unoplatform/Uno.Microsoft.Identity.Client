@@ -21,7 +21,16 @@
   <PropertyGroup Condition="'$(TargetFramework)' == '$(TargetFrameworkNetStandard)'">
     <DefineConstants>$(DefineConstants);NETSTANDARD_RUNTIME</DefineConstants>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == '$(TargetFrameworkUnoWasm)'">
+    <DefineConstants>$(DefineConstants);UNO_WASM</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
+    <NoWarn>NU5105;CS8002;CS0618</NoWarn>
+  </PropertyGroup>
   <ItemGroup>
     <ReferenceAssemblyProjectReference Include="..\Microsoft.Identity.Client.Ref\Microsoft.Identity.Client.Ref.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Platforms\unowasm\" />
   </ItemGroup>  
 </Project>

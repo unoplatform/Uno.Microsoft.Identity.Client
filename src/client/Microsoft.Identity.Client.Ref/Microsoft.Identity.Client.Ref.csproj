@@ -27,4 +27,7 @@
   <PropertyGroup Condition="'$(TargetFramework)' == '$(TargetFrameworkNetStandard)'">
     <DefineConstants>$(DefineConstants);NETSTANDARD_BUILDTIME</DefineConstants>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == '$(TargetFrameworkUnoWasm)'">
+    <DefineConstants>$(DefineConstants);UNO_WASM_BUILDTIME</DefineConstants>
+  </PropertyGroup>
 </Project>

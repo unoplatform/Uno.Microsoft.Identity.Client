@@ -52,7 +52,7 @@ namespace Microsoft.Identity.Json.Utilities
     }
 #endif
 
-#if PORTABLE && !ANDROID && !NET_CORE && !WINDOWS_APP
+#if PORTABLE && !ANDROID && !NET_CORE && !WINDOWS_APP && !UNO_WASM
     [Flags]
     internal enum BindingFlags
     {
@@ -746,7 +746,7 @@ namespace Microsoft.Identity.Json.Utilities
             return attributes?.FirstOrDefault();
         }
 
-#if !(DOTNET || PORTABLE) || ANDROID
+#if !(DOTNET || PORTABLE) || ANDROID || UNO_WASM
         public static T[] GetAttributes<T>(object attributeProvider, bool inherit) where T : Attribute
         {
             Attribute[] a = GetAttributes(attributeProvider, typeof(T), inherit);
