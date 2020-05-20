@@ -12,7 +12,7 @@ src/ADAL.PCL.Android/ADAL.PCL.Android.csproj.bak
 *.userprefs
 AppPackages
 Microsoft.IdentityModel.Clients.ActiveDirectory.XML
-*.htm
+#*.htm
 .nugetPackageRoot/
 
 # Created by https://www.gitignore.io/api/visualstudio

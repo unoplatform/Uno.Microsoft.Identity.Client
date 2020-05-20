@@ -3,6 +3,7 @@
 
 using System.Net.Http;
 using System.Net.Http.Headers;
+
 #if iOS
 using Foundation;
 using UIKit;
@@ -31,6 +32,8 @@ namespace Microsoft.Identity.Client.Http
 #elif ANDROID
             // See https://aka.ms/msal-net-httpclient for details
             _httpClient = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler());
+#elif UNO_WASM
+            _httpClient = new HttpClient(new Uno.UI.Wasm.WasmHttpHandler());
 #else
             _httpClient = new HttpClient(new HttpClientHandler() { UseDefaultCredentials = true })
             {

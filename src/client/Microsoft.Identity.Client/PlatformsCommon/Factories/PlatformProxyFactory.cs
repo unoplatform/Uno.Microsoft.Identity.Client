@@ -34,6 +34,8 @@ namespace Microsoft.Identity.Client.PlatformsCommon.Factories
             return new Microsoft.Identity.Client.Platforms.netstandard13.Netstandard13PlatformProxy(finalLogger);
 #elif DESKTOP
             return new Microsoft.Identity.Client.Platforms.net45.NetDesktopPlatformProxy(finalLogger);
+#elif UNO_WASM
+            return new Microsoft.Identity.Client.Platforms.unowasm.UnoWasmPlatformProxy(finalLogger);
 #else
             throw new PlatformNotSupportedException();
 #endif

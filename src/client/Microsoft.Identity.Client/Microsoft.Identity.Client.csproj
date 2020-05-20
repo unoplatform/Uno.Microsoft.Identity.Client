@@ -27,10 +27,16 @@
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
     <NoWarn>NU5105;CS8002;CS0618</NoWarn>
   </PropertyGroup>
-  <ItemGroup>
-    <ReferenceAssemblyProjectReference Include="..\Microsoft.Identity.Client.Ref\Microsoft.Identity.Client.Ref.csproj" />
+  <ItemGroup Condition="'$(TargetFramework)' == '$(TargetFrameworkUnoWasm)'">
+    <Content Include="Platforms\unowasm\ts\tsconfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <EmbeddedResource Include="WasmScripts\*.js" />
+    <UpToDateCheckInput Include="Platforms/unowasm/ts/*.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Platforms\unowasm\" />
+    <ReferenceAssemblyProjectReference Include="..\Microsoft.Identity.Client.Ref\Microsoft.Identity.Client.Ref.csproj" />
   </ItemGroup>  
 </Project>

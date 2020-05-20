@@ -40,6 +40,8 @@ namespace UWP_standalone
         public MainPage()
         {
             InitializeComponent();
+            _redirectUris.Add("http://localhost:5000/authentication/login-callback.htm");
+            _redirectUris.Add("https://localhost:5001/authentication/login-callback.htm");
             _redirectUris.Add(NullRedirectUri);
             _redirectUris.Add("https://MyDirectorySearcherApp");
         }
@@ -51,6 +53,7 @@ namespace UWP_standalone
                 .WithRedirectUri(GetRedirectUri())
                 .Build();
 
+#if !__WASM__
             // custom serialization - this is very similar to what MSAL is doing
             // but extenders can implement their own cache.
             _pca.UserTokenCache.SetAfterAccess((tokenCacheNotifcation) =>
@@ -81,6 +84,7 @@ namespace UWP_standalone
                     tokenCacheNotifcation.TokenCache.DeserializeMsalV3(result);
                 }
             });
+#endif
         }
 
         private string GetRedirectUri()
