@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <DefineConstants>$(DefineConstants);RUNTIME</DefineConstants>
+    <PackageId>Uno.Microsoft.Identity.Client</PackageId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == '$(TargetFrameworkNetCore)' ">
     <DefineConstants>$(DefineConstants);NET_CORE_RUNTIME</DefineConstants>
