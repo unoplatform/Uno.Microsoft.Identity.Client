@@ -37,7 +37,7 @@
     <EmbeddedResource Include="WasmScripts\*.js" />
     <UpToDateCheckInput Include="Platforms/unowasm/ts/*.ts" />
   </ItemGroup>
-  <ItemGroup>
+  <!--<ItemGroup>
     <ReferenceAssemblyProjectReference Include="..\Microsoft.Identity.Client.Ref\Microsoft.Identity.Client.Ref.csproj" />
-  </ItemGroup>  
+  </ItemGroup>-->  
 </Project>
