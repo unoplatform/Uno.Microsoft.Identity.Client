@@ -1,0 +1,5 @@
+﻿<linker>
+  <assembly fullname="Microsoft.Identity.Client">
+    <type fullname="Microsoft.Identity.Client.Instance.*" />
+  </assembly>
+</linker>
