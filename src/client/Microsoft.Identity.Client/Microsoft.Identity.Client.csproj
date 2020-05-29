@@ -35,8 +35,15 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <EmbeddedResource Include="WasmScripts\*.js" />
+    <EmbeddedResource Include="LinkerDefinition.xml">
+      <LogicalName>$(AssemblyName).xml</LogicalName>
+    </EmbeddedResource>
     <UpToDateCheckInput Include="Platforms/unowasm/ts/*.ts" />
   </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != '$(TargetFrameworkUnoWasm)'">
+    <None Include="LinkerDefinition.xml" />
+  </ItemGroup>
+
   <!--<ItemGroup>
     <ReferenceAssemblyProjectReference Include="..\Microsoft.Identity.Client.Ref\Microsoft.Identity.Client.Ref.csproj" />
   </ItemGroup>-->  
