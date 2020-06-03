@@ -1,3 +1,14 @@
+# Port of Microsoft Authentication Library (MSAL) for .NET, UWP, NetCore, Xamarin Android, iOS and Uno Platform for WebAssembly
+
+This repository provides the ability for applications to use MSAL.NET on all platforms already supported, with the addition of WebAssembly applications running on the [Uno Platform](https://github.com/unoplatform/uno).
+
+# Uno.Microsoft.Identity.Client Nuget Package
+
+[![NuGet](https://img.shields.io/nuget/v/Uno.Microsoft.Identity.Client.svg?style=flat-square&label=nuget&colorB=00b200)](https://www.nuget.org/packages/Uno.Microsoft.Identity.Client/) 
+
+> Note: Below is the original documentation of the parent repository
+---
+
 # Microsoft Authentication Library (MSAL) for .NET, UWP, NetCore, Xamarin Android and iOS
 
 The MSAL library for .NET is part of the [Microsoft identity platform for developers](https://aka.ms/aaddevv2) (formerly named Azure AD) v2.0. It enables you to acquire security tokens to call protected APIs. It uses industry standard OAuth2 and OpenID Connect. The library also supports [Azure AD B2C](https://azure.microsoft.com/services/active-directory-b2c/).
